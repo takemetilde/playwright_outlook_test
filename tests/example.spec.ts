@@ -4,7 +4,12 @@ import readEmails from "./ReadEmails";
 
 test('has title', async ({page}) => {
     let accessToken = await getEmailToken.getToken(page);
-    console.log(await readEmails.getEmails(accessToken));
+    let response = await readEmails.getEmails(accessToken);
+    console.log(response);
+
+    console.log("XOXO");
+    console.log(response[0].bodyPreview);
+
 
     await page.goto('https://playwright.dev/');
     // Expect a title "to contain" a substring.
