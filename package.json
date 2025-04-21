@@ -1,0 +1,25 @@
+{
+  "name": "playwright_outlook_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/takemetilde/playwright_outlook_test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/takemetilde/playwright_outlook_test/issues"
+  },
+  "homepage": "https://github.com/takemetilde/playwright_outlook_test#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.14.1"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "dotenv": "^16.5.0"
+  }
+}
