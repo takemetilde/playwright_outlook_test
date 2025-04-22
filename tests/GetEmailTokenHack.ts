@@ -1,6 +1,6 @@
 import {Page} from "@playwright/test";
 
-class GetEmailToken {
+class GetEmailTokenHack {
     async getToken(page: Page): Promise<string> {
         await page.goto('https://developer.microsoft.com/en-us/graph/graph-explorer');
         const page1Promise = page.waitForEvent('popup');
@@ -22,4 +22,4 @@ class GetEmailToken {
     }
 }
 
-export default new GetEmailToken();
+export default new GetEmailTokenHack();

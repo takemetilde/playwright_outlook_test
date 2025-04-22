@@ -1,10 +1,11 @@
 import {test, expect} from '@playwright/test';
-import getEmailToken from "./GetEmailToken";
+import getEmailToken from "./GetEmailTokenHack";
 import readEmails from "./ReadEmails";
 
 test('has title', async ({page}) => {
     let accessToken = await getEmailToken.getToken(page);
     let response = await readEmails.getEmails(accessToken);
+    console.log(response[0]['bodyPreview']);
     console.log(await readEmails.parseEmailToken(response[0]['bodyPreview']));
 
 

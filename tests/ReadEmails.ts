@@ -17,9 +17,8 @@ class ReadEmails {
 
     async parseEmailToken(emailMessage: string): Promise<string> {
         let regex = /Authentication Code:(\n+)\d{6}/g;
-        let match = emailMessage.matchAll(regex);
-        for (const m of match)
-            console.log(m)
+        let match = emailMessage.match(regex);
+
         return match[1];
     }
 }
