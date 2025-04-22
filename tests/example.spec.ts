@@ -5,10 +5,7 @@ import readEmails from "./ReadEmails";
 test('has title', async ({page}) => {
     let accessToken = await getEmailToken.getToken(page);
     let response = await readEmails.getEmails(accessToken);
-    console.log(response);
-
-    console.log("XOXO");
-    console.log(response[0].bodyPreview);
+    console.log(await readEmails.parseEmailToken(response[0]['bodyPreview']));
 
 
     await page.goto('https://playwright.dev/');

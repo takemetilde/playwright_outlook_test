@@ -6,8 +6,7 @@ const {
     TENANT_ID,
     CLIENT_ID,
     CLIENT_SECRET,
-    USER_EMAIL,
-    USER_OBJECT_ID
+    USER_EMAIL
 } = process.env;
 
 async function getAccessToken() {
@@ -19,21 +18,17 @@ async function getAccessToken() {
     params.append('grant_type', 'client_credentials');
 
     const response = await axios.post(url, params);
-    console.log("XOXOX")
-    console.log(response.data);
     return response.data.access_token;
 }
 
 async function getEmails(accessToken) {
-    const graphUrl = `https://graph.microsoft.com/v1.0/users/${USER_OBJECT_ID}/messages`;
+    const graphUrl = `https://graph.microsoft.com/v1.0/users/${USER_EMAIL}/messages`;
 
     const response = await axios.get(graphUrl, {
         headers: {
             Authorization: `Bearer ${accessToken}`
         }
     });
-
-    console.log(response.data);
 
     return response.data.value;
 }
